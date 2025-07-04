@@ -63,3 +63,11 @@ img {
     background-color: grey;
     display: inline-block;
 }
+
+.dot:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.shownImageDot {
+    background-color: black;
+}
