@@ -1,5 +1,4 @@
-import { nextSlide, previousSlide } from "./arrowsLogic";
+import { setUpArrowButtons } from "./arrowsLogic";
 import "./styles.css";
 
-nextSlide();
-previousSlide();
+setUpArrowButtons();

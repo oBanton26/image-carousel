@@ -27,3 +27,10 @@ export function previousSlide () {
         imageArray[visibleImageIndex - 1].classList.toggle("visible");
     };
 };
+
+export function setUpArrowButtons () {
+    const leftArrow = document.querySelector(".arrow-left");
+    const rightArrow = document.querySelector(".arrow-right");
+    leftArrow.addEventListener("click", previousSlide);
+    rightArrow.addEventListener("click", nextSlide);
+}

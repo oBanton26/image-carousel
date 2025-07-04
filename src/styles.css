@@ -34,4 +34,14 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+}
+
+.arrow-container {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.arrow-container:hover {
+    box-shadow: 0px 0px 10px black;
 }
