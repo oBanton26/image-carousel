@@ -6,7 +6,7 @@ function getPositionOfVisibleImage (imageArray) {
     };
 };
 
-export function nextSlide () {
+function nextSlide () {
     const imageArray = Array.from(document.querySelectorAll(".image"));
     const visibleImageIndex = getPositionOfVisibleImage(imageArray);
     imageArray[visibleImageIndex].classList.toggle("visible");
@@ -17,7 +17,7 @@ export function nextSlide () {
     };
 };
 
-export function previousSlide () {
+function previousSlide () {
     const imageArray = Array.from(document.querySelectorAll(".image"));
     const visibleImageIndex = getPositionOfVisibleImage(imageArray);
     imageArray[visibleImageIndex].classList.toggle("visible");
