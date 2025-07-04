@@ -8,41 +8,45 @@ export function getPositionOfVisibleImage (imageArray) {
     };
 };
 
+
 export function getArrayOfImageDOMNode () {
     return Array.from(document.querySelectorAll(".image"));
-}
+};
+
+
+export function toggleImageVisibility (indexOfImage, imageArray) {
+    imageArray[indexOfImage].classList.toggle("visible");
+    toggleDotColor(indexOfImage);
+};
+
 
 function nextSlide () {
     const imageArray = getArrayOfImageDOMNode();
     const visibleImageIndex = getPositionOfVisibleImage(imageArray);
 
-    imageArray[visibleImageIndex].classList.toggle("visible");
-    toggleDotColor(visibleImageIndex);
+    toggleImageVisibility(visibleImageIndex, imageArray);
 
     if (visibleImageIndex === imageArray.length - 1) {
-        imageArray[0].classList.toggle("visible");
-        toggleDotColor(0);
+        toggleImageVisibility(0, imageArray);
     } else {
-        imageArray[visibleImageIndex + 1].classList.toggle("visible");
-        toggleDotColor(visibleImageIndex + 1);
+        toggleImageVisibility(visibleImageIndex + 1, imageArray);
     };
 };
+
 
 function previousSlide () {
     const imageArray = getArrayOfImageDOMNode();
     const visibleImageIndex = getPositionOfVisibleImage(imageArray);
 
-    imageArray[visibleImageIndex].classList.toggle("visible");
-    toggleDotColor(visibleImageIndex);
+    toggleImageVisibility(visibleImageIndex, imageArray);
 
     if (visibleImageIndex === 0) {
-        imageArray[imageArray.length - 1].classList.toggle("visible");
-        toggleDotColor(imageArray.length - 1);
+        toggleImageVisibility(imageArray.length - 1, imageArray);
     } else {
-        imageArray[visibleImageIndex - 1].classList.toggle("visible");
-        toggleDotColor(visibleImageIndex - 1);
+        toggleImageVisibility(visibleImageIndex - 1, imageArray);
     };
 };
+
 
 export function setUpArrowButtons () {
     const leftArrow = document.querySelector(".arrow-left");
