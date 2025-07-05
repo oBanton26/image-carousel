@@ -53,4 +53,9 @@ export function setUpArrowButtons () {
     const rightArrow = document.querySelector(".arrow-right");
     leftArrow.addEventListener("click", previousSlide);
     rightArrow.addEventListener("click", nextSlide);
-}
+};
+
+
+export function startFiveSecTimer () {
+    const myInterval = setInterval(nextSlide, 5000);
+};
